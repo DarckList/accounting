@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:accounting;assembly=accounting"
+             x:Class="accounting.Views.ListLoanVeiw"
+             Title="Список позик">
+    <ScrollView Padding="0,0,0,10">
+        <ListView x:Name="movmentList" 
+                  ItemsSource="{Binding MyList}" 
+                  Style="{StaticResource MainStack}"
+                  RowHeight="170"
+                  ItemTapped="MovmentList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame x:Name="OneOperation" 
+                                           CornerRadius="10"
+                                           Margin="20, 10,20,0"
+                                           Padding="0">
+                            <StackLayout Padding="5"
+                                                     Orientation="Horizontal"
+                                                     BackgroundColor="{StaticResource MovmentItemColor}">
+                                <StackLayout Orientation="Vertical" HeightRequest="70">
+                                    <Label Text="{Binding EndDate}"
+                                                       TextColor="{StaticResource TextColor}"
+                                                       FontSize="Medium"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"
+                                                       VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding IndividualName}"
+                                                       TextColor="{StaticResource TextColor}"
+                                                       FontSize="Medium"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"
+                                                       VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding IndividualSurname}"
+                                                       TextColor="{StaticResource TextColor}"
+                                                       FontSize="Medium"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"
+                                                       VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding FoneNumber}"
+                                                       TextColor="{StaticResource TextColor}"
+                                                       FontSize="Medium"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"
+                                                       VerticalTextAlignment="Center"/>
+
+                                </StackLayout>
+                                <Label Text="{Binding FinalySum}"
+                                                   TextColor="{StaticResource TextColor}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   WidthRequest="70"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+</ContentPage>

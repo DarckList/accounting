@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="accounting.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="LightBlue"/>
+                <Setter Property="BarTextColor" Value="Black"/>
+            </Style>
+            
+            <Color x:Key="TextColor">Black</Color>
+            <Color x:Key="PageBackgroundColor">Yellow</Color>
+            <Color x:Key="MainBakgroundColor">White</Color>
+            <Color x:Key="FirstColor">LightGray</Color>
+            <Color x:Key="SteckItemColor">BurlyWood</Color>
+            <Color x:Key="MovmentItemColor">BurlyWood</Color>
+            <Color x:Key="BarBgColor">LightBlue </Color>
+            
+            <Style x:Key="MainStack" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBakgroundColor}"/>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <!--<Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="Yellow" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

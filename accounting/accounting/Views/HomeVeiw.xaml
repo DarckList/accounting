@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:accounting;assembly=accounting"
+             x:Class="accounting.Views.HomeVeiw" Title="Домашня сторінка">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainStack}">
+           
+            <Frame HeightRequest="500" Margin="0,90,0,0" Padding="0" BackgroundColor="{StaticResource FirstColor}"/>
+            
+            
+            <Frame CornerRadius="10"
+                   Margin="20, -580,20,0"
+                   Padding="0">
+                <StackLayout x:Name="MonthBalance" 
+                             Padding="10"
+                             BackgroundColor="{StaticResource SteckItemColor}">
+                    <Label Text="Поточний балатс"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           TextColor="{StaticResource TextColor}"/>
+                    <Label Text="{Binding ThisMonth}"
+                           TextColor="{StaticResource TextColor}"/>
+                    <Label Text="{Binding Income, StringFormat='Доходи: {0}'}"
+                           TextColor="{StaticResource TextColor}"/>
+                    <Label Text="{Binding Expense, StringFormat='Витрати: {0}'}"
+                           TextColor="{StaticResource TextColor}"/>
+                    <Label Text="{Binding Balance, StringFormat='Поточний баланс: {0}'}"
+                           TextColor="{StaticResource TextColor}"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame CornerRadius="10"
+                   Margin="20, 10, 20,0"
+                   Padding="0">
+                <Grid Padding="5"
+                      HeightRequest="60"
+                      BackgroundColor="{StaticResource SteckItemColor}"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="addButton" 
+                            Text="+ додати дохід"
+                            Grid.Column="0"
+                            Clicked="AddButton_Clicked"
+                            TextColor="{StaticResource TextColor}"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            CornerRadius="10"/>
+
+                    <Button x:Name="expenseButton"
+                            Text="- додати витрати"
+                            Grid.Column="1"
+                            Clicked="ExpenseButton_Clicked"
+                            TextColor="{StaticResource TextColor}"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                             CornerRadius="10"/>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="10"
+                   Margin="20, 10, 20,0"
+                   Padding="0">
+                <Grid Padding="5"
+                      HeightRequest="60"
+                      BackgroundColor="{StaticResource SteckItemColor}"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="takeLoan" 
+                            Text="- позичити кошти"
+                            Grid.Column="0"
+                            Clicked="TakeLoan_Clicked"
+                            TextColor="{StaticResource TextColor}"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                             CornerRadius="10"/>
+                    <Button x:Name="getLoan" 
+                            Text="+ стати позичальником"
+                            Grid.Column="1"
+                            Clicked="GetLoan_Clicked"
+                            TextColor="{StaticResource TextColor}"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                             CornerRadius="10"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

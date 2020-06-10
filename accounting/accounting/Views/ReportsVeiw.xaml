@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:local="clr-namespace:accounting" 
+             x:Class="accounting.Views.ReportsVeiw"
+             Title="Звіт">
+    <StackLayout  Style="{StaticResource MainStack}">
+
+        <Picker x:Name="TypeOutlay"
+                        Title="Тип діаграми"
+                        TextColor="{StaticResource TextColor}"
+                        SelectedIndexChanged="TypeOutlay_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Кругова діаграма</x:String>
+                <x:String>Радіальний датчик</x:String>
+                <x:String>Точкоа діаграма</x:String>
+                <x:String>Гістограма</x:String>
+            </Picker.Items>
+        </Picker>
+        <microcharts:ChartView x:Name="chartView">
+            <microcharts:ChartView.HeightRequest>
+                <OnIdiom Default="125" Desktop="250"/>
+            </microcharts:ChartView.HeightRequest>
+        </microcharts:ChartView>
+    </StackLayout>
+</ContentPage>

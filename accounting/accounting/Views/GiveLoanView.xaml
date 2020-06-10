@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:accounting;assembly=accounting"
+             x:Class="accounting.Views.GiveLoanView"
+             Title="Позичити кошти">
+    <NavigationPage.TitleView>
+        <ImageButton x:Name="SaveTakeLoanViewvImgButton"
+                Source="{local:ImageResource accounting.Images.save.png}"
+                BackgroundColor="{StaticResource BarBgColor}"
+                HorizontalOptions="End"
+                     HeightRequest="40"
+                     WidthRequest="70"
+                Clicked="SaveGiveLoanViewImgButton_Clicked"/>
+    </NavigationPage.TitleView>
+    
+    
+    <StackLayout x:Name="giveLoanVeiwStack"
+                 BackgroundColor="{StaticResource MainBakgroundColor}"
+                 Padding="10">
+        <Label Text="ДАНІ ПОЗИКОДАВЦЯ"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Large"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Label Text="*Ім'я"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Entry x:Name="nameGives"
+               Text="{Binding NameGives}" 
+               TextColor="{StaticResource TextColor}"/>
+
+        <Label Text="*Прізвище"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Entry x:Name="surnameGives"
+               Text="{Binding SurnameGives}" 
+               TextColor="{StaticResource TextColor}"/>
+
+        <Label Text="*Номер мобільно"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Entry x:Name="mobileNumberGives"
+               Text="{Binding MobileNumberGives}" 
+               TextColor="{StaticResource TextColor}"/>
+
+        <Label Text="*Дата закриття позики"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <DatePicker x:Name="endDateGiveLoan"
+            Date="{Binding EndDateGiveLoan}"
+            TextColor="{StaticResource TextColor}"/>
+
+        <Label Text="*Cума позики"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Entry x:Name="sumGives"
+               Text="{Binding SumGives}" 
+               TextColor="{StaticResource TextColor}"/>
+    </StackLayout>
+</ContentPage>

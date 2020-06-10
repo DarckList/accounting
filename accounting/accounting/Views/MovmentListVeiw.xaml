@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:accounting;assembly=accounting"
+             x:Class="accounting.Views.MovmentListVeiw"
+             Title="Список дій">
+    <ContentPage.Content>
+        <ScrollView Padding="0,0,0,10">
+            <StackLayout Style="{StaticResource MainStack}">
+                <ListView x:Name="movmentList" 
+                          ItemsSource="{Binding MyList}" 
+                          ItemSelected="MovmentList_ItemSelected"
+                          RowHeight="120">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame x:Name="OneOperation" 
+                                        CornerRadius="10"
+                                        Margin="20, 10,20,0"
+                                        Padding="0">
+                                    <StackLayout Padding="5"
+                                                    Orientation="Horizontal"
+                                                    BackgroundColor="{StaticResource MovmentItemColor}">
+                                        <Image Source="{local:ImageResource accounting.Images.backMoney.png }" WidthRequest="50"></Image>
+                                        <StackLayout Orientation="Vertical" HeightRequest="70">
+                                            <Label Text="{Binding DateTransaction}"
+                                                    TextColor="{StaticResource TextColor}"
+                                                    FontSize="Small"
+                                                    HorizontalOptions="Start"
+                                                    VerticalOptions="Center"
+                                                    VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding TypeTransaction}"
+                                                    TextColor="{StaticResource TextColor}"
+                                                    FontSize="Medium"
+                                                    FontAttributes="Bold"
+                                                    HorizontalOptions="Start"
+                                                    VerticalOptions="EndAndExpand"
+                                                    VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding SumTransaktion}"
+                                                TextColor="{StaticResource TextColor}"
+                                                FontSize="Medium"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="Center"
+                                                VerticalTextAlignment="Center"
+                                                WidthRequest="95"/>
+                                    </StackLayout>
+                                </Frame>    
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

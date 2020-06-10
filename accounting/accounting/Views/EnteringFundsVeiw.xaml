@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:accounting;assembly=accounting"
+             x:Class="accounting.Views.EnteringFundsVeiw"
+             Title="Додати дохід">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+            <ImageButton x:Name="DeletEntering"
+                     Source="{local:ImageResource accounting.Images.delet.png}"
+                BackgroundColor="{StaticResource BarBgColor}"
+                HorizontalOptions="End"
+                HeightRequest="40"
+                WidthRequest="80"
+                Clicked="DeletEntering_Clicked"/>
+            <ImageButton x:Name="SaveEnteringFunds"
+                Source="{local:ImageResource accounting.Images.save.png}"
+                BackgroundColor="{StaticResource BarBgColor}"
+                HorizontalOptions="End"
+                     HeightRequest="40"
+                     WidthRequest="70"
+                Clicked="SaveEnteringFunds_Clicked"/>
+        </StackLayout>
+       
+    </NavigationPage.TitleView>
+
+    <StackLayout x:Name="fundsVeiwStack"
+                 BackgroundColor="{StaticResource MainBakgroundColor}"
+                 Padding="10">
+        <Label Text="*Сума поступлених коштів"
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="entrySum" 
+                   TextColor="{StaticResource TextColor}"
+                   Text="{Binding Sum}"
+                   WidthRequest="300"
+                   Keyboard="Numeric"
+                   HorizontalOptions="EndAndExpand"/>
+            <ImageButton x:Name="calculator" 
+                         Source="{local:ImageResource accounting.Images.calculator.png}" 
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         BackgroundColor="{StaticResource MainBakgroundColor}"
+                         Pressed="Calculator_Pressed"/>
+        </StackLayout>
+        <Label Text="*Джерело доходу" 
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Picker Title="Джерело доходу"  
+                x:Name="enteringPicker"
+                TextColor="{StaticResource TextColor}"
+                SelectedItem="{Binding EnteringSourcePicker}">
+                <Picker.Items>
+                    <x:String>Зарплата</x:String>
+                    <x:String>Премія</x:String>
+                    <x:String>Подарок</x:String>
+                    <x:String>Виграш</x:String>
+                </Picker.Items>
+        </Picker>
+        <Label Text="Додатковий опис" 
+               TextColor="{StaticResource TextColor}"
+               FontAttributes="bold"/>
+        <Entry Text="{Binding EnteringComent}" 
+               TextColor="{StaticResource TextColor}"/>       
+    </StackLayout>
+</ContentPage>
